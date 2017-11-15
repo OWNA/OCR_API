@@ -1,0 +1,52 @@
+﻿                                                                                                                              V           o' S                          
+                                                                                                                                                                        
+                                                                                                                                                                 wmmm   
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                                                                                        
+Simon Test Wholesaler                                                                                                                  INVOICE                         
+                                                                                                                                                                        
+                                                                                                                                                                        
+123 Your Street                                                                                                                                  22-April-2017         
+Your Town                                                                                                                                     Invoice #1234567         
+Address Line 3                                                                                                                                     PO456001200         
+                                                                                                                                                                        
+(123) 456 789                                                                                                          Att: Ms. Jane Doe                               
+email@yourcompany.com                                                                                                  Client Company Name                             
+                                                                                                                                                                       
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                                                                                        
+              Dear Ms. Jane Doe,                                                                                                                                        
+                                                                                                                                                                        
+              Please find below a cost-breakdown for the recent work completed. Please make payment at                                                                  
+                                                                                                                                                                        
+              your earliest convenience, and do not hesitate to contact me with any questions.                                                                          
+                                                                                                                                                                        
+              Many thanks,                                                                                                                                              
+              Your Name                                                                                                                                                 
+                                                                                                                                                                        
+                                                                                                                                                                        
+ #            Item Description                                                               Quantity               Unit price (4) Total (€)                            
+ 1            3260 Amazonia Energiser                                                        1                      3.00                        3.00                    
+                                                                                                                                                                        
+ 2                                                                                                                                                                      
+ 3                                                                                                                                                                      
+ 4                                                                                                                                                                      
+ 5                                                                                                                                                                      
+                                                                                                                                                                        
+ 6                                                                                                                                                                      
+ 7                                                                                                                                                                      
+ Subtotal                                                                                                                                       3.00                    
+ Sales Tax (20%)                                                                                                                                0.60                    
+ Total                                                                                                                                          3.60                    
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                                                                                        
+              Many thanks for your custom! I look forward to doing business with you again in due course.                                                               
+                                                                                                                                                                        
+              Payment terms: to be received within 60 days.                                                                                                             
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                  Powered by invoicely.com                                                              
+                                                                                                                                                                        

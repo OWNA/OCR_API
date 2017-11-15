@@ -1,0 +1,114 @@
+{
+    "headers": [
+        "code",
+        "description",
+        "unitOfMeasure",
+        "price1",
+        "quantity",
+        "price2",
+        "gst",
+        "price4"
+    ],
+    "table": [
+        [
+            "104015",
+            "Beef Cube Roll 120gr (app 6kg Ctn) - Kg",
+            "Kg",
+            "$16.89",
+            "1 Kg",
+            "$16.89",
+            "$0.00",
+            "$16.89"
+        ],
+        [
+            "65252",
+            "Beef Neck Bones Frz (app 18kg) - Kg",
+            "Kg",
+            "$1.76",
+            "1 Kg",
+            "$1.76",
+            "$0.00",
+            "$1.76"
+        ],
+        [
+            "104287",
+            "Beef Tenderloin Bonded 200gr (app 4kg Ctn) - Kg Kg",
+            "",
+            "$33.66",
+            "1 Kg",
+            "$33.66",
+            "$0.00",
+            "$33.66"
+        ],
+        [
+            "104013",
+            "Beef Tenderloin Bonded 250gr (app 5kg Ctn) - Kg Kg",
+            "",
+            "$30.00",
+            "1 Kg",
+            "$30.00",
+            "$0.00",
+            "$30.00"
+        ],
+        [
+            "104295",
+            "Msa Tenderloin 200gr (app 4kg Ctn) - Kg",
+            "Kg",
+            "$42.77",
+            "1 Kg",
+            "$42.77",
+            "$0.00",
+            "$42.77"
+        ],
+        [
+            "128070",
+            "Msa Tenderloin 200gr Free Range (app 4kg",
+            "Kg",
+            "$43.21",
+            "1 Kg",
+            "$43.21",
+            "$0.00",
+            "$43.21"
+        ],
+        [
+            "56801",
+            "Beef Tenderloin S/off 1.8kg Up (app 17kg Ctn) -",
+            "Kg",
+            "$23.00",
+            "1 Kg",
+            "$23.00",
+            "$0.00",
+            "$23.00"
+        ],
+        [
+            "128027",
+            "Msa Tenderloin 1.8kg Up Iw/vac (app 18kg) -",
+            "Kg",
+            "$31.02",
+            "1 Kg",
+            "$31.02",
+            "$0.00",
+            "$31.02"
+        ],
+        [
+            "105953",
+            "Chicken Breast Fits B/less S/less - 2 Kg",
+            "Pkt",
+            "$18.22",
+            "1 Pkt",
+            "$18.22",
+            "$0.00",
+            "$18.22"
+        ],
+        [
+            "138126",
+            "Lamb Diced (app 5kg Ctn) - Emerald - Kg",
+            "Kg",
+            "$15.16",
+            "1 Kg",
+            "$15.16",
+            "$0.00",
+            "$15.16"
+        ]
+    ]
+}

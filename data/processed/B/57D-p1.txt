@@ -1,0 +1,33 @@
+﻿IIP                                                                                                                                                      
+                                                                                                                                                         
+                                                                                                                                                         
+                                                                                                                                                         
+                                                                                                                                                         
+                         Roger Jordan                                                                                                                    
+                         Mathilda Avenue                                                                                                                 
+                         Sunnyvale, California 93231                                                                                                     
+                         (643) 132-9843                                                                                                                  
+                                                                                                                                                         
+                                                                                                                                                         
+                                                                                                                                                         
+                      Some Company                                 Invoice #                     101138                                                  
+                      c/o Some Guy                                                                                                                       
+                                                                      Date                    January 1, 2012                                            
+                                                                                                                                                         
+                                                                                                                                                         
+                                                                                                                                                         
+                                                     id                      Details                     Item Price               Count    Tota\ Ma\ue  
+                                                                                                                                                         
+                                           24934                Paste Curry Green                               $4.56              4.00     $18.24       
+                                                                                                                                                         
+                                                                                                                                                         
+                                                                                                                                                         
+                                      Total                               $18.24                                                                         
+                                                                                                                                                         
+                            Balance Due                                            $0                                                                    
+                                                                                                                                                         
+                                                                                                                                                         
+ A D D IT I O N A L                                                                                                       NOTES                          
+                                                                                                                                                         
+ A finance charge of 1.5% will be made on unpaid balances after 30 days.                                                                                 
+                                                                                                                                                         

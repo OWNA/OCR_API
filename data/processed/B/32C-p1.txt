@@ -1,0 +1,38 @@
+﻿                           Aooer Jordan                                                                                                                               
+                           Mathilda Avenue                                                                                                                            
+                           Sunnyvale. California 93231                                                                                                                
+                           (643) 132-9843                                                                                                                             
+                                                                                                                                                                      
+                                                                                                                                                                      
+                                                                                                                                                                      
+                                                                                                                                                                      
+                         Some Company                                                                                                                                 
+                         c/o Some Guy                                                       Invoice #                       101138                                    
+                                                                                                                                                                      
+                                                                                              Date                   January 1, 2012                                  
+                                                                                                                                                                      
+                                                                                          Amount Due                        $84.57                                    
+                                                                                                                                                                      
+                                                                                                                                                                      
+                                                        Item Description                               Id      Ordered                     Total     Pre-gst    Total
+                                                                                                                                           Unit                 Value
+                                                                                                                                           Price                      
+                                                                                                                                                                      
+                                                    Topping Butterscotch 3 It                      44326         0.4            12.06      12.06      4.82      4.82 
+                                                                                                                                                                      
+                                                    Dressing Coleslaw 2.5 Kg                       4677          3              23.34      23.34      70.02     70.02
+                                                                                                                                                                      
+                                                    Brussel Sprouts Iqf 2 Kg                     136245          1              9.73       9.73       9.73      9.73 
+                                                                                                                                                                      
+                                                                                                                                                                      
+                                                                                                                                                                      
+                             Total                                     $84.57                                                                                         
+                                                                                                                                                                      
+ Balance Due                                                              $0                                                                                          
+                                                                                                                                                                      
+                                                                                                                                                                      
+                                                                                                                                                                      
+                                                                    ADD I T I O N A L                      NOTES_________                                             
+                                                                                                                                                                      
+A finance charge of 1.5% will be made on unpaid balances after 30 days.                                                                                               
+                                                                                                                                                                      

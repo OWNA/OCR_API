@@ -1,0 +1,121 @@
+{
+    "headers": [
+        "NULL",
+        "code",
+        "brand",
+        "description",
+        "packSize",
+        "unitOfMeasure",
+        "quantity",
+        "price1",
+        "price3",
+        "gst",
+        "price4"
+    ],
+    "table": [
+        [
+            "F",
+            "15194",
+            "EDGELL",
+            "CHIPS 10MM SUPA CRUNCH 6X2KG",
+            "12 KG",
+            "CTN",
+            "8",
+            "37.50",
+            "300.00",
+            ". 00",
+            "300.00"
+        ],
+        [
+            "F",
+            "27309",
+            "GOLDEN EGGS",
+            "EGG PULP FROZEN 15KG",
+            "15 KG",
+            "CTN",
+            "2",
+            "54.95",
+            "109.90",
+            ".00",
+            "109.90"
+        ],
+        [
+            "R",
+            "",
+            "AMH/SWIFT",
+            "BEEF CUBE ROLL S 5RIB 2.2/3.IKG-k-^",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "395.92"
+        ],
+        [
+            "",
+            "36852",
+            "",
+            "",
+            "API6KG 1",
+            "RW",
+            "2",
+            "13.99",
+            "395.92",
+            ".00",
+            ""
+        ],
+        [
+            "",
+            "20353",
+            "SOVEREIGN",
+            "IAMB LEGS BONED & ROLLED FRESH",
+            "API5KG 1",
+            "RW",
+            "2",
+            "12.25",
+            "336.14",
+            ".00",
+            "336.14"
+        ],
+        [
+            "",
+            "Customer Comments:",
+            "",
+            "Customer Signature.",
+            "",
+            "",
+            "",
+            "Total Net",
+            "1664.45",
+            "",
+            ""
+        ],
+        [
+            "",
+            "Customer ORD No",
+            "",
+            "Customer name:",
+            "",
+            "",
+            "",
+            "TcU GST:",
+            "2.10",
+            "",
+            ""
+        ],
+        [
+            "",
+            "",
+            "PH",
+            "/",
+            "",
+            "",
+            "",
+            "Total Invoice:",
+            "1666.55",
+            "",
+            ""
+        ]
+    ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "price": 16.25,
+    "description": "CASHEWS RAW",
+    "quantity": 1.0
+  },
+  {
+    "price": 30.4,
+    "description": "CHOCOLATE BUTTONS WHITE SNOWCAP COMPOUND",
+    "quantity": 1.0
+  },
+  {
+    "price": 16.2,
+    "description": "ESSENCE VANILLA IMITATION",
+    "quantity": 1.0
+  },
+  {
+    "price": 618.0,
+    "description": "FLOUR SELF RAISING GLUTEN FREE",
+    "quantity": 10.0
+  },
+  {
+    "price": 18.32,
+    "description": "SUGAR CASTER",
+    "quantity": 1.0
+  },
+  {
+    "price": 8.99,
+    "description": "VINEGAR WHITE WINE",
+    "quantity": 1.0
+  }
+]
