@@ -22,7 +22,7 @@ from matching.exceptions import *
 from table.segmenter import segment_and_label_from_raw_ocr
 from table.pdf import segment_and_label_pdf
 from rest_framework.renderers import JSONRenderer
-
+from table.matcher import segment_and_label_with_matching
 from ocrapi.api.parser import parse_orders
 from ocrapi.api.order_match import find_best_soft_match
 from ocrapi.api.models import AnalyzedImage, Item, ItemChange, Structure
@@ -139,10 +139,6 @@ def process_image_unsafe(image):
         else:
             raise UnsupportedFileType()
     params = {'user_uid': image.user_uid}
-    url = '{}?{}'.format(settings.ORDERS_API_URL, urllib.urlencode(params))
-    headers = {
-        'Authorization': 'Token ' + os.environ['OCR_SERVER_TOKEN']
-    }
     orders = parse_orders(json.loads(image.orders))
     distance, (order_id, originalItems) = find_best_soft_match(orders, words)
     logger.debug('Found matching item %s at %s in Jaccard distance',
@@ -152,66 +148,9 @@ def process_image_unsafe(image):
 
     # Run matching
     bestCost, bestAssignment = optimizeMatching(words, originalItems)
-    descriptionIndex = bestAssignment.descriptionIndex
-    quantityIndex = bestAssignment.quantityIndex
-    priceIndex = bestAssignment.priceIndex
-    valuePart = bestAssignment.relevantParts[priceIndex]
-    matching = bestAssignment.matching
-    for lineIndex, productItem in enumerate(originalItems):
-
-        matchingDescription = matching[lineIndex][descriptionIndex]
-        matchingQuantity = matching[lineIndex][quantityIndex]
-        matchingPrice = matching[lineIndex][priceIndex]
-
-        if not len(matchingDescription):
-            record_missing(image, productItem)
-            continue
-
-        quantity = float(matchingQuantity[0].value)
-        description = matchingDescription[0].value
-        price_value = float(matchingPrice[0].value)
-
-        if not quantity:
-            record_missing(image, productItem)
-            continue
-
-        price, unit_price, price_pre_gst, unit_price_pre_gst = get_price_values(
-            price_value, valuePart, quantity, productItem.gstPercent)
-        item = Item(description=description,
-                    quantity=quantity,
-                    unit_price_pre_gst=unit_price_pre_gst,
-                    unit_price=unit_price,
-                    price_pre_gst=price_pre_gst,
-                    order_item_id=productItem.item_id,
-                    price=price,
-                    image=image)
-        item.save()
-        if has_changed(quantity, productItem.quantity):
-            record_quantity_change(item, quantity, productItem)
-        if has_changed(unit_price, productItem.totalUnitPrice):
-            record_price_change(item, unit_price, productItem)
-    for item in matching[len(originalItems):]:
-        matchingDescription = item[descriptionIndex]
-        matchingQuantity = item[quantityIndex]
-        matchingPrice = item[priceIndex]
-        quantity = float(matchingQuantity[0].value)
-        description = matchingDescription[0].value
-        price_value = float(matchingPrice[0].value)
-
-        price, unit_price, price_pre_gst, unit_price_pre_gst = get_price_values(
-            price_value, valuePart, quantity, 0)
-        item = Item(description=description,
-                    quantity=quantity,
-                    unit_price_pre_gst=unit_price_pre_gst,
-                    unit_price=unit_price,
-                    price_pre_gst=price_pre_gst,
-                    order_item_id=None,
-                    price=price,
-                    image=image)
-        item.save()
-        record_new_item(item)
-        item.save()
-
+    tables = segment_and_label_with_matching(words, bestAssignment)
+    for (table, headers) in tables:
+        record_items_for_table(table, headers, image=image)
 
 
 def report_webhook(image, serializer):
@@ -244,27 +183,7 @@ def process_image(image_id):
     return image.status
 
 
-def extract_structure_unsafe_single_file(structure, file_obj):
-    file_url = os.path.join(settings.MEDIA_ROOT, str(file_obj.url))
-    logger.debug("Processing structure from %s", file_url)
-    file_type = magic.from_file(file_url, mime=True)
-
-    if file_type == 'image/jpeg':
-        xml_filename, text_filename = run_abbyy(file_url)
-        xmlFile = XMLFile(xml_filename)
-        xmlFile.parseWithVariants(split=True)
-        rotate_file(file_obj, xmlFile.rotation)
-        f = open(text_filename)
-        lines = []
-        for line in f.readlines():
-            if line.strip():
-                lines.append(line.strip())
-        table, headers = segment_and_label_from_raw_ocr(lines, xmlFile.words)
-    elif file_type == 'application/pdf':
-        table, headers = segment_and_label_pdf(file_url)
-    else:
-        raise UnsupportedFileType()
-
+def record_items_for_table(table, headers, image=None, structure=None):
     def get_value(headers, header_name, line):
         header_index = index(headers, header_name)
         return line[header_index] if header_index != -1 else ''
@@ -305,9 +224,33 @@ def extract_structure_unsafe_single_file(structure, file_obj):
                     price_pre_gst=price_pre_gst,
                     unit_price=unit_price,
                     price=price,
+                    image=image,
                     structure=structure)
         item.save()
     logger.debug(tabulate(table, headers))
+
+
+def extract_structure_unsafe_single_file(structure, file_obj):
+    file_url = os.path.join(settings.MEDIA_ROOT, str(file_obj.url))
+    logger.debug("Processing structure from %s", file_url)
+    file_type = magic.from_file(file_url, mime=True)
+
+    if file_type == 'image/jpeg':
+        xml_filename, text_filename = run_abbyy(file_url)
+        xmlFile = XMLFile(xml_filename)
+        xmlFile.parseWithVariants(split=True)
+        rotate_file(file_obj, xmlFile.rotation)
+        f = open(text_filename)
+        lines = []
+        for line in f.readlines():
+            if line.strip():
+                lines.append(line.strip())
+        table, headers = segment_and_label_from_raw_ocr(lines, xmlFile.words)
+    elif file_type == 'application/pdf':
+        table, headers = segment_and_label_pdf(file_url)
+    else:
+        raise UnsupportedFileType()
+    record_items_for_table(table, headers, structure=structure)
 
 
 def extract_structure_unsafe(structure):

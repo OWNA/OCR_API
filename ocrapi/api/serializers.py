@@ -12,13 +12,12 @@ class ItemChangeSerializer(serializers.ModelSerializer):
 
 class ItemSerializer(serializers.ModelSerializer):
 
-    changes = ItemChangeSerializer(many=True, read_only=True)
-
     class Meta:
         model = Item
-        fields = ('description', 'quantity', 'order_item_id',
+        fields = ('description', 'quantity', 'code',
                   'unit_price_pre_gst', 'unit_price',
-                  'price_pre_gst', 'price', 'changes')
+                  'pack_size', 'unit_of_measure', 'brand',
+                  'price_pre_gst', 'price')
 
 
 class StructureItemSerializer(serializers.ModelSerializer):
@@ -73,7 +72,6 @@ class AnalyzedImageSerializer(serializers.HyperlinkedModelSerializer):
     status = serializers.CharField(read_only=True)
     id = serializers.IntegerField(read_only=True)
     confidence_score = serializers.FloatField(read_only=True)
-    rotation = serializers.FloatField(read_only=True)
     matching_order_id = serializers.IntegerField(read_only=True)
     orders = serializers.CharField(write_only=True, allow_blank=True)
     wholesalers = serializers.CharField(write_only=True, allow_blank=True)
@@ -97,8 +95,7 @@ class AnalyzedImageSerializer(serializers.HyperlinkedModelSerializer):
         model = AnalyzedImage
         fields = ('user_uid', 'uploaded_at', 'urls', 'status', 'id',
                   'items', 'confidence_score', 'matching_order_id',
-                  'webhook_url', 'orders', 'wholesalers', 'metrics',
-                  'rotation', 'files')
+                  'webhook_url', 'orders', 'wholesalers', 'metrics', 'files')
 
 
 class FormattedJsonField(serializers.CharField):

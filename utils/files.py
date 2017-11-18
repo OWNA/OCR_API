@@ -19,6 +19,19 @@ def distance(x1, y1, x2, y2):
     return math.sqrt((x1 - x2) **2 + (y1 - y2)**2)
 
 
+class Box(object):
+
+    def __init__(self, l, t, r, b):
+        self.l = l
+        self.r = r
+        self.b = b
+        self.t = t
+
+    @property
+    def center(self):
+        return [(self.l + self.r) / 2, (self.t + self.b) / 2]
+
+
 class Word(object):
 
     def __init__(self, content, xL, xR, yT, yB, page_index=0):
@@ -43,6 +56,10 @@ class Word(object):
 
     def maxYB(self, start, end):
         return max(self.yB[start:end])
+
+    @property
+    def box(self):
+        return Box(self.xL[0], self.yT[0], self.xR[-1],  self.yB[-1])
 
     def __str__(self):
         return ','.join([self.content.encode('utf-8'),

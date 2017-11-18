@@ -7,7 +7,9 @@ from ocrapi.api.order_match import find_best_soft_match
 from matching.optimizer import optimizeMatching
 from matching.structure import Structure
 from matching.debug import printAssignment
+from table.matcher import segment_and_label_with_matching
 from termcolor import colored
+from tabulate import tabulate
 
 
 class TestInvoiceMatching(unittest.TestCase):
@@ -29,6 +31,10 @@ class TestInvoiceMatching(unittest.TestCase):
         distance, (order_id, items) = find_best_soft_match(orders, xmlFile.words)
 
         bestCost, bestAssignment = optimizeMatching(xmlFile.words, items)
+        for (t, h) in segment_and_label_with_matching(xmlFile.words,
+                                                      bestAssignment):
+            continue
+            print tabulate(t, h)
         #printAssignment(bestAssignment)
 
         structure = Structure(bestAssignment)
@@ -75,14 +81,17 @@ class TestInvoiceMatching(unittest.TestCase):
 
     def test_invoice_matching_bidfood(self):
         self.run_matcher(589)
+        pass
 
     def test_invoice_matching_test_wholesaler(self):
         # Invoice 1234567 Test Wholesaler
         self.run_matcher(296)
+        pass
 
     def test_invoice_matching_test_costco(self):
         # Invoice 101138 Costco
         self.run_matcher(283)
+        pass
 
 
 if __name__ == '__main__':

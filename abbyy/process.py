@@ -8,11 +8,11 @@ from AbbyyOnlineSdk import *
 
 processor = AbbyyOnlineSdk()
 
-if "ABBYY_APPID" in os.environ:
-	processor.ApplicationId = os.environ["ABBYY_APPID"]
+if "OCR_ABBYY_APPID" in os.environ:
+	processor.ApplicationId = os.environ["OCR_ABBYY_APPID"]
 
-if "ABBYY_PWD" in os.environ:
-	processor.Password = os.environ["ABBYY_PWD"]
+if "OCR_ABBYY_PWD" in os.environ:
+	processor.Password = os.environ["OCR_ABBYY_PWD"]
 
 print 'ApplicationId:"{0}", Password:"{1}"'.format(processor.ApplicationId, processor.Password)
 # Proxy settings
@@ -69,4 +69,3 @@ def recognizeFile(filePath,
 			print "Result2 was written to %s" % resultFilePath2
 	else:
 		print "Error processing task %s" % task.Error
-

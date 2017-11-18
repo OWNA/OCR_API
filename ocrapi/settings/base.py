@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'ocrapi.api',
-    'ocrapi.remote',
     'ddtrace.contrib.django',
     'rest_framework.authtoken'
 ]
